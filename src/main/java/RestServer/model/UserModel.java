@@ -86,7 +86,7 @@ public class UserModel implements Serializable {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(Set<RoleModel> roles) {
         this.roles = roles;
     }
 

@@ -1,5 +1,7 @@
 package RestServer.util;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 public class PasswordEncoder {
 
     private static BCryptPasswordEncoder bCryptPasswordEncoder;
