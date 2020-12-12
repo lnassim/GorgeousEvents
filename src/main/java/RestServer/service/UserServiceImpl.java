@@ -2,6 +2,7 @@ package RestServer.service;
 
 import RestServer.dataAccessObject.RoleRepository;
 import RestServer.dataAccessObject.UserRepository;
+import RestServer.exception.BusinessResourceException;
 import RestServer.model.RoleModel;
 import RestServer.model.UserModel;
 import org.apache.commons.collections4.IteratorUtils;
