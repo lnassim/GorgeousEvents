@@ -24,19 +24,18 @@ public class Controller {
 	@GetMapping(value="/api");
 	public String index();
 
-	@RequestMapping(value="/api/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE);
+	@RequestMapping(value="/connection", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE);
     @ResponseBody
 	public Message generateToken(@RequestBody Map<String, Object> playload){
     	String user = playload.get("user").toString();
     	String password = playload.get("password").toString();
-
     	System.out.println(user + "user");
     	System.out.println(password + "password");
 	}
 
-	@RequestMapping(value="/api/inscription")
+	@RequestMapping(value="/inscription")
 	public ModelAndView someMethod(String user, String password){
-    	ModelAndView modelAndView = new ModelAndView("inscrption");
+    	ModelAndView modelAndView = new ModelAndView("inscription");
 
     	for (User u : repository.findByUser(user)){
     		if(u.getUser().equals(user)){
@@ -49,10 +48,7 @@ public class Controller {
     	repository.save(new User(user,password));
     	return modelAndView;
 	}
-	/*@GetMapping("/greeting")
-	public com.example.restservice.Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return new com.example.restservice.Greeting(counter.incrementAndGet(), String.format(template, name));
-	}*/
+
 
 
 }
