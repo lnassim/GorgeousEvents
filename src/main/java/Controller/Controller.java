@@ -21,22 +21,25 @@ public class Controller {
 	@Autowired
 	private UserRepository repository;
 
-	@GetMapping(value="/api");
-	public String index();
+	/*@GetMapping(value="/api");
+	public String index(); */
 
-	@RequestMapping(value="/connection", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE);
+/*	@RequestMapping(value="/connection", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE);
     @ResponseBody
 	public Message generateToken(@RequestBody Map<String, Object> playload){
     	String user = playload.get("user").toString();
     	String password = playload.get("password").toString();
     	System.out.println(user + "user");
     	System.out.println(password + "password");
-	}
+	}*/
 
 	@RequestMapping(value="/inscription")
-	public ModelAndView someMethod(String user, String password){
+	public void someMethod(@RequestParam String userName,@RequestParam String password, @RequestParam String email){
     	ModelAndView modelAndView = new ModelAndView("inscription");
 
+    	repository.save(new User(userName,password));
+
+    	/*
     	for (User u : repository.findByUser(user)){
     		if(u.getUser().equals(user)){
     			modelAndView.addObject("message","Il y a déjà un compte à ce nom");
@@ -46,7 +49,7 @@ public class Controller {
 		}
     	modelAndView.addObject("message","Il y a déjà un compte à ce nom");
     	repository.save(new User(user,password));
-    	return modelAndView;
+    	return modelAndView;*/
 	}
 
 

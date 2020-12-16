@@ -31,7 +31,7 @@ public class User {
 	public String getUser(){return user;}
 	public String getPassword(){return password;}
 	public String getToken(){return token;}
-	public String setToken(String token){this.token =token;}
+	public String setToken(String token){return this.token =token;}
 
 
 }
