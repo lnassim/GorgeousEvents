@@ -15,6 +15,7 @@ public class RoleServiceImpl implements RoleService {
 
     private RoleRepository roleRepository;
 
+    // constructeur
     public RoleServiceImpl() {
         super();
     }

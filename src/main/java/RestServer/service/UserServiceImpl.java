@@ -15,7 +15,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.management.relation.Role;
 import javax.transaction.Transactional;
 import java.util.Collection;
 import java.util.HashSet;
@@ -45,7 +44,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<UserModel> findByLogin(String login) {
+    public Optional<UserModel> findByLogin(String login) throws BusinessResourceException{
 
         Optional<UserModel> userFound = userRepository.findByLogin(login);
         if (Boolean.FALSE.equals(userFound.isPresent())) {
@@ -65,8 +64,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<UserModel> findUserById(Long id){
-
+    public Optional<UserModel> findUserById(Long id) throws BusinessResourceException{
+        // On vérifie si on trouve un utiilisateur à partir de son Id
         Optional<UserModel> userFound = userRepository.findById(id);
         if (Boolean.FALSE.equals(userFound.isPresent())){
             throw new BusinessResourceException("User Not Found", "Aucun utilisateur avec l'identifiant :" + id);
@@ -75,8 +74,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(readOnly=false)
-    public UserModel saveOrUpdateUser(UserModel user){
+    @Transactional
+    public UserModel saveOrUpdateUser(UserModel user) throws BusinessResourceException{
         try{
             if(null ==user.getId()) {//pas d'Id --> création d'un user
                 addUserRole(user);//Ajout d'un rôle par défaut
@@ -107,7 +106,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(readOnly=false)
+    @Transactional
     public void deleteUser(Long id) throws BusinessResourceException {
         try{
             userRepository.deleteById(id);
@@ -153,10 +152,10 @@ public class UserServiceImpl implements UserService {
         user.setRoles(roleFromDB);
     }
 
-    private Set<RoleModel> extractRole_Java8(Set<Role> rolesSetFromUser, Stream<RoleModel> roleStreamFromDB) {
+    private Set<RoleModel> extractRole_Java8(Set<RoleModel> rolesSetFromUser, Stream<RoleModel> roleStreamFromDB) {
         // Collect UI role names
         Set<String> uiRoleNames = rolesSetFromUser.stream()
-                .map(Role::getRoleName)
+                .map(RoleModel::getRoleName)
                 .collect(Collectors.toCollection(HashSet::new));
         // Filter DB roles
         return roleStreamFromDB
@@ -164,25 +163,4 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toSet());
     }
 
-    @SuppressWarnings("unused")
-    private Set<Role> extractRoleUsingCompareTo_Java8(Set<Role> rolesSetFromUser, Stream<Role> roleStreamFromDB) {
-        return roleStreamFromDB
-                .filter(roleFromDB -> rolesSetFromUser.stream()
-                        .anyMatch( roleFromUser -> roleFromUser.compareTo(roleFromDB) == 0))
-                .collect(Collectors.toCollection(HashSet::new));
-    }
-
-    @SuppressWarnings("unused")
-    private Set<Role>  extractRole_BeforeJava8(Set<Role> rolesSetFromUser, Collection<Role> rolesFromDB) {
-        Set<Role> rolesToAdd = new HashSet<>();
-        for(Role roleFromUser:rolesSetFromUser){
-            for(Role roleFromDB:rolesFromDB){
-                if(roleFromDB.compareTo(roleFromUser)==0){
-                    rolesToAdd.add(roleFromDB);
-                    break;
-                }
-            }
-        }
-        return rolesToAdd;
-    }
 }

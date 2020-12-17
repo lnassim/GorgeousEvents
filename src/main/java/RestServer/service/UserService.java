@@ -1,5 +1,6 @@
 package RestServer.service;
 
+import RestServer.exception.BusinessResourceException;
 import RestServer.model.UserModel;
 
 import java.util.Collection;
@@ -7,16 +8,19 @@ import java.util.Optional;
 
 public interface UserService {
 
-    Collection<UserModel> getAllUsers();
+    Collection<UserModel> getAllUsers() throws BusinessResourceException;
 
-    Optional<UserModel> getUserById(Long id);
+    Optional<UserModel> getUserById(Long id) throws BusinessResourceException;
 
-    Optional<UserModel> findByLogin(String login);
 
-    UserModel saveOrUpdateUser(UserModel user);
+    Optional<UserModel> findByLogin(String login)throws BusinessResourceException;
 
-    void deleteUser(Long id);
+    Optional<UserModel> findUserById(Long id) throws BusinessResourceException;
 
-    Optional<UserModel> findByLoginAndPassword(String login, String password);
+    UserModel saveOrUpdateUser(UserModel user) throws BusinessResourceException;
+
+    void deleteUser(Long id) throws BusinessResourceException;
+
+    Optional<UserModel> findByLoginAndPassword(String login, String password) throws BusinessResourceException;
 
 }

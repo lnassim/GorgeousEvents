@@ -18,9 +18,4 @@ public class CrossDomainFilter extends OncePerRequestFilter {
         httpServletResponse.addHeader("Access-Control-Allow-Headers", "origin, content-type, accept, x-req");
         filterChain.doFilter(httpServletRequest, httpServletResponse);
     }
-
-    @Override
-    protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
-
-    }
 }

@@ -1,11 +1,12 @@
 package RestServer.model;
 
-import javax.management.relation.Role;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+// L'annotation @Entity permet d'indiquer à l'ORM Hibernate que cette classe sera une table de la base de données et
+// l'annotation @Table(name = "UTILISATEUR") permet de donner le nom UTILISATEUR à la table. Grâce à ces annotations, on n'a plus besoin du fichier de configuration persistence.xml
 @Entity
 @Table(name = "UTILISATEUR")
 public class UserModel implements Serializable {
@@ -28,7 +29,7 @@ public class UserModel implements Serializable {
 
     @ManyToMany(cascade = CascadeType.DETACH)
     @JoinTable(name = "USER_ROLE", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "ROLE_ID"))
-    private Set<Role> roles= new HashSet<>();
+    private Set<RoleModel> roles= new HashSet<RoleModel>();
 
     public UserModel() {
         super();
@@ -82,7 +83,7 @@ public class UserModel implements Serializable {
         this.active = active;
     }
 
-    public Set<Role> getRoles() {
+    public Set<RoleModel> getRoles() {
         return roles;
     }
 
