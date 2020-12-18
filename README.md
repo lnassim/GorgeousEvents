@@ -7,7 +7,8 @@ les fonctionnalité suivantes seront présentes:
   -possibilité d'ouvrir un compte afin d'avoir un meilleur suivi
   -possibilité de nous noter et de laisser votre avis par rapport à nos prestations
   -accès à tous nos autres retours et certaines vidéos et propositions de prestation
- Problèmes rencontrés:
+ 
+Problèmes rencontrés:
   -difficultés pour lier le back et le front
   -un membre du groupe (Anourah NDAO) avait des problèmes pour push ou commit
 et été donc obligé d'envoyer son code par d'autres moyens aux
