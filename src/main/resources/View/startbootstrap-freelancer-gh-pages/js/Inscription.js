@@ -15,7 +15,7 @@ var signup=function(){
         dataType: "json",
         data:{userName:userN, password:passwrd, email:eMail,confirmPassword:confirmPasswrd},
         success:function(resultat){
-            location.href="index.html"
+            location.href="Accueil.html"
         }
     })
 

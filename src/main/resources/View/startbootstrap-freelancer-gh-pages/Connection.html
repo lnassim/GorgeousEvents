@@ -4,10 +4,10 @@ OU SINSCRIRE ON ARRIVE SUR LA PAGE DACCEUIL QUI PROPOSE LA NOTATION  ET LE SONDA
 <html lang="en">
 <head>
     <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <meta charset="utf-8" />
-    <!-- script js -->
-    <script src="js/ConnectionEtInscription.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        <meta charset="utf-8" />
+        <!-- script js -->
+        <script src="js/Connection.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
@@ -47,11 +47,11 @@ OU SINSCRIRE ON ARRIVE SUR LA PAGE DACCEUIL QUI PROPOSE LA NOTATION  ET LE SONDA
     </br></br>
     <div class="container">
         <!-- Portfolio Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Inscription/Connection</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Connection</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-icon"><i class="fas fa-star gold"></i></div>
             <div class="divider-custom-line"></div>
         </div>
 
@@ -69,39 +69,27 @@ OU SINSCRIRE ON ARRIVE SUR LA PAGE DACCEUIL QUI PROPOSE LA NOTATION  ET LE SONDA
 
 
 
-<!-- Formulaire inscription -->
-<div class="container-fluid">
+
+        <div class="container-fluid">
 
             <div id="sidePanel" class="sidePanel">
-                <h1>Je m'inscris ! </h1>
-                <h3>Inscription</h3>
+                <h3>Connection</h3>
                 <div class="form-group">
                     <label for="inputLogin">Nom d'utilisateur</label>
                     <input type="text" class="form-control" id="inputLogin" required>
                 </div>
                 <div class="form-group">
-                    <label for="inputMail">Mail</label>
-                    <input type="email" class="form-control" id="inputMail" required>
-                </div>
-                <div class="form-group">
                     <label for="inputPassword">Mot de passe</label>
                     <input type="password" class="form-control" id="inputPassword" required>
                 </div>
-                <div class="form-group">
-                    <label for="inputConfirmPassword">Confirmer votre mot de passe</label>
-                    <input type="password" class="form-control" id="inputConfirmPassword" required>
+                <button id="btnConnection" class="btn btn-dark">Se connecter</button>
+               <p> <a href="Accueil.html">Mot de passe oublie ? </a></p>
+
+                <div class="col-md-9">
+                    <div id="mainArea" class="mainArea"></div>
                 </div>
-                <small id="error" class="alert alert-danger" role="alert"></small>
-                <button id="btnCancel" class="btn btn-danger">Annuler</button>
-                <button id="btnSignup" class="btn btn-dark">S'inscrire</button>
-
-
-        <div class="col-md-9">
-            <div id="mainArea" class="mainArea"></div>
+            </div>
         </div>
-    </div>
-</div>
-    </div>
-</section>
+
 </body>
 </html>

@@ -2,11 +2,13 @@ package com.apiGorgeousEvent.Service;
 
 import com.apiGorgeousEvent.Exception.BusinessResourceException;
 import com.apiGorgeousEvent.Model.UserModel;
-import com.apiGorgeousEvent.Model.UserModel;
+
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.Optional;
 
+@Service
 public interface UserService {
 
     Collection<UserModel> getAllUsers() throws BusinessResourceException;

@@ -1,10 +1,12 @@
 package com.apiGorgeousEvent.DataAccessObject;
 
 import com.apiGorgeousEvent.Model.UserModel;
+import org.springframework.stereotype.Component;
 
 
 import java.util.List;
 
+@Component
 public interface UserDao {
 
 	List<UserModel> allUsers();

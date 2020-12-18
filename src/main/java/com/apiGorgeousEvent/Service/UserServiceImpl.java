@@ -14,8 +14,9 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
+
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Optional;
@@ -95,13 +96,13 @@ public class UserServiceImpl implements UserService {
             return  result;
         } catch(DataIntegrityViolationException ex){
             logger.error("Utilisateur déjà existant", ex);
-            throw new BusinessResourceException("DuplicateValueError", "Un utilisateur existe déjà avec le compte : "+user.getLogin(), HttpStatus.CONFLICT);
+            throw new BusinessResourceException("DuplicateValueError", "Un utilisateur existe déjà avec le compte : "+user.getUsername(), HttpStatus.CONFLICT);
         } catch (BusinessResourceException e) {
             logger.error("Utilisateur non existant", e);
             throw new BusinessResourceException("UserNotFound", "Aucun utilisateur avec l'identifiant: "+user.getId(), HttpStatus.NOT_FOUND);
         } catch(Exception ex){
             logger.error("Erreur technique de création ou de mise à jour de l'utilisateur", ex);
-            throw new BusinessResourceException("SaveOrUpdateUserError", "Erreur technique de création ou de mise à jour de l'utilisateur: "+user.getLogin(), HttpStatus.INTERNAL_SERVER_ERROR);
+            throw new BusinessResourceException("SaveOrUpdateUserError", "Erreur technique de création ou de mise à jour de l'utilisateur: "+user.getUsername(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

@@ -1,15 +1,15 @@
 package com.apiGorgeousEvent.Service;
 
 import com.apiGorgeousEvent.DataAccessObject.UserDao;
+
+import com.apiGorgeousEvent.Model.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 
 @Service
 public class JwtUserDetailsServiceImpl implements UserDetailsService {
@@ -25,7 +25,8 @@ public class JwtUserDetailsServiceImpl implements UserDetailsService {
         if (dao.getUserbyUsername(username) == null) {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
-        return new User(dao.getUserbyUsername(username).getUsername(), bcryptEncoder.encode(dao.getUserbyUsername(username).getPassword()),
-                new ArrayList<>());
+        return new UserModel(dao.getUserbyUsername(username).getUsername(),
+                bcryptEncoder.encode(dao.getUserbyUsername(username).getPassword()));
+
     }
 }

@@ -1,11 +1,11 @@
 var init = function () {
-    $("#btnLogin").click(() => login());
+    $("#Connection").click(() => login());
     $('#btnSignup').click(() => signup());
 }
 
 var login = function () {
-    const sUsername = $('#inputLogin').val();
-    const sPassword = $('#inputPassword').val();
+    const Username = $('#inputLogin').val();
+    const password = $('#inputPassword').val();
     $('#loginError').css('display', 'none');
     if (sUsername.length === 0 || sPassword.length === 0) {
         $('#loginError').html("Veuillez renseigner tous les champs");
@@ -15,15 +15,15 @@ var login = function () {
             url: "http://localhost:8080/login",
             type: 'post',
             data: {
-                username: sUsername,
-                password: sPassword
+                username: username,
+                password: password
             },
             success : function (result) {
                 if (result && result.token.length > 1) {
                     $('#loginError').css('display', 'none');
                     localStorage.setItem('auth_token', result.token);
                     saveUserId()
-                    location.href = "home.html";
+                    location.href = "Accueil.html";
                 }
             },
             error : function() {
