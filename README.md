@@ -8,9 +8,13 @@ les fonctionnalité suivantes seront présentes:
   -possibilité de nous noter et de laisser votre avis par rapport à nos prestations
   -accès à tous nos autres retours et certaines vidéos et propositions de prestation
  
-Problèmes rencontrés:
-  -difficultés pour lier le back et le front
-  -un membre du groupe (Anourah NDAO) avait des problèmes pour push ou commit
+Le travail:
+Nous avons mis en place le formulaire d'inscription par contre nous n'avons pas réussi à faire fonctionner
+le code ajax pour afficher un message d'erreur lorsque les formulaires ne sont pas correctement remplis.
+Concernant la notation, après avoir donné une note il y a une popup qui d'affiche avec le nombre d'étoiles donnés
+Nous avons eu des difficultés pour lier le back et le front.
+De plus un membre du groupe (Anourah NDAO) avait des problèmes pour push ou commit
 et été donc obligé d'envoyer son code par d'autres moyens aux
 autres membre pour qu'ils puissent le faire
-  -coder en général
+Et enfin nous avons eu quelques difficultés pour coder en général
+  
