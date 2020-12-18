@@ -11,10 +11,10 @@ Les fonctionnalités suivantes seront présentes:
 Le travail:
 Nous avons mis en place le formulaire d'inscription par contre nous n'avons pas réussi à faire fonctionner
 le code ajax pour afficher un message d'erreur lorsque les formulaires ne sont pas correctement remplis.
-Concernant la notation, après avoir donné une note il y a une popup qui d'affiche avec le nombre d'étoiles donnés.
+Concernant la notation, après avoir donné une note il y a une popup qui s'affiche avec le nombre d'étoiles données.
 Nous avons aussi eu des difficultés pour lier le back et le front.
 De plus un membre du groupe (Anourah NDAO) avait des problèmes pour push ou commit
 et été donc obligé d'envoyer son code par d'autres moyens aux
-autres membre pour qu'ils puissent le faire.
-Et enfin nous avons eu quelques difficultés pour coder en général.
+autres membre pour qu'ils puissent le faire. 
+Et enfin nous avons eu quelques difficultés pour coder en général car certains d'entre nous ne travaillent pas habituellement sur Java, ainsi il a fallu un peu de temps pour comprendre le fonctionnement de l'architecture générale. 
   
