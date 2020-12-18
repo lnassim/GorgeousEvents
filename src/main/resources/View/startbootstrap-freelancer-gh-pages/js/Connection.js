@@ -1,57 +1,34 @@
-var init = function () {
-    $("#Connection").click(() => login());
-    $('#btnSignup').click(() => signup());
-}
+var init = function() {
+    $("#btnConnection").click(() => connection());
 
-var login = function () {
-    const Username = $('#inputLogin').val();
-    const password = $('#inputPassword').val();
-    $('#loginError').css('display', 'none');
-    if (sUsername.length === 0 || sPassword.length === 0) {
-        $('#loginError').html("Veuillez renseigner tous les champs");
-        $('#loginError').css('display', 'block');
+};
+$('#problem').css('display', 'none');
+var connection = function() {
+    var identifiant = $('#identifiant').val();
+    var motDePasse = $('#motDePasse').val();
+
+    if (identifant.length === 0 || motDePasse.length === 0) {
+        $('#problem').css('display', 'block');
+        $('#problem').html('Vous n avez pas renseigné tout les champs');
     } else {
         $.ajax({
-            url: "http://localhost:8080/login",
+            url: "http://localhost:8080/user/new",
             type: 'post',
             data: {
-                username: username,
-                password: password
+                username: identifiant,
+                password: motDePasse,
             },
-            success : function (result) {
-                if (result && result.token.length > 1) {
-                    $('#loginError').css('display', 'none');
-                    localStorage.setItem('auth_token', result.token);
-                    saveUserId()
-                    location.href = "Accueil.html";
-                }
+            success : function(resultat) {
+                location.href = "accueil.html";
             },
-            error : function() {
-                $('#loginError').html("Nom d'utilisateur/Mot de passe invalide(s)");
-                $('#loginError').css('display', 'block');
+            problem : function() {
+                $('#problem').css('display', 'block');
+                $('#problem').html('L identifiant ou le mot de passe est incorrect');
             }
         });
     }
 };
 
-function saveUserId() {
-    const sToken = localStorage.getItem('auth_token');
-    $.ajax({
-        url: "http://localhost:8080/user/information",
-        type: 'get',
-        headers: {"Authorization": "Bearer " + sToken},
-        success : function (result) {
-            if (result) {
-                localStorage.setItem('Id', result.id);
-            }
-        }
-    });
-};
-
-var signup = function () {
-    location.href = "inscription.html";
-};
-
-$(document).ready(function () {
+$(document).ready(function(){
     init();
 });

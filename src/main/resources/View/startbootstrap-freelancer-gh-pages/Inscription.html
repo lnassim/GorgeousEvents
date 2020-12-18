@@ -76,21 +76,23 @@ OU SINSCRIRE ON ARRIVE SUR LA PAGE DACCEUIL QUI PROPOSE LA NOTATION  ET LE SONDA
                 <h1>Je m'inscris ! </h1>
                 <h3>Inscription</h3>
                 <div class="form-group">
-                    <label for="inputLogin">Nom d'utilisateur</label>
-                    <input type="text" class="form-control" id="inputLogin" required>
+                    <label for="insererUser">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" id="insererUser" required>
                 </div>
                 <div class="form-group">
-                    <label for="inputMail">Mail</label>
-                    <input type="email" class="form-control" id="inputMail" required>
+                    <label for="insererUser">Mail</label>
+                    <input type="email" class="form-control" id="insererMail" required>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword">Mot de passe</label>
-                    <input type="password" class="form-control" id="inputPassword" required>
+                    <label for="insererMotDePasse">Mot de passe</label>
+                    <input type="password" class="form-control" id="insererMotDePasse" required>
                 </div>
-
-                <button id="btnConnection" class="btn btn-dark">Se connecter</button>
-                <li><a href="https://example.com">J'ai oublié mon mot de passe</a></li>
-
+                <div class="form-group">
+                    <label for="confirmerMotDePasse">Confirmez votre mot de passe</label>
+                    <input type="password" class="form-control" id="confirmerMotDePasse" required>
+                </div>
+                <small id="problem" class="alert alert-danger" role="alert"></small>
+                <button id="btnInscription" class="btn btn-dark">S inscrire</button>
 
         <div class="col-md-9">
             <div id="mainArea" class="mainArea"></div>
