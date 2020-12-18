@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.stream.Stream;
 
+// CELA AURAIT PERMIT DE DEFINIR SI C EST UN ADMIN OU UTILISATEUR
 public interface RoleRepository extends JpaRepository<RoleModel, Long> {
 
     RoleModel findByRoleName(String roleName);

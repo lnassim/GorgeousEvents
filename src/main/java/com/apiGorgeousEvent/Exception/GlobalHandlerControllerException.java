@@ -17,7 +17,7 @@ public class GlobalHandlerControllerException extends ResponseEntityExceptionHan
 
     @InitBinder
     public void dataBinding(WebDataBinder binder) {
-        //Vous pouvez intialiser n'importe quelle donnée ici
+        // POSSIBILITE DINITIALISER DONNEES
 
     }
 

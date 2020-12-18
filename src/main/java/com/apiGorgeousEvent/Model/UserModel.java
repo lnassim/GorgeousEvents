@@ -31,6 +31,7 @@ public class UserModel implements Serializable, UserDetails {
     @Column(name = "USER_MAIL", insertable=true, updatable = true, nullable=false)
     private String mail;
 
+    // ROLE PERMET DE DEFINIR SI ADMIN OU UTILISATEUR SIMPLE
     @ManyToMany(cascade = CascadeType.DETACH)
     @JoinTable(name = "USER_ROLE", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "ROLE_ID"))
     private Set<RoleModel> roles= new HashSet<RoleModel>();

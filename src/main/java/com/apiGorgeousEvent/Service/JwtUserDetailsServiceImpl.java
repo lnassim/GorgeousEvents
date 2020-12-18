@@ -23,7 +23,7 @@ public class JwtUserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         if (dao.getUserbyUsername(username) == null) {
-            throw new UsernameNotFoundException("User not found with username: " + username);
+            throw new UsernameNotFoundException("L Utilisateur n a pas ete trouve avec le user suivant: " + username);
         }
         return new UserModel(dao.getUserbyUsername(username).getUsername(),
                 bcryptEncoder.encode(dao.getUserbyUsername(username).getPassword()));
