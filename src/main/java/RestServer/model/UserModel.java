@@ -31,7 +31,7 @@ public class UserModel implements Serializable {
     @JoinTable(name = "USER_ROLE", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "ROLE_ID"))
     private Set<RoleModel> roles= new HashSet<RoleModel>();
 
-    public UserModel() {
+    public UserModel(String userName, String password, String mail) {
         super();
     }
 
