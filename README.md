@@ -9,8 +9,7 @@ Les fonctionnalités suivantes seront présentes:
   -accès à tous nos autres retours et certaines vidéos et propositions de prestation.
  
 Le travail:
-Nous avons mis en place le formulaire d'inscription par contre nous n'avons pas réussi à faire fonctionner
-le code ajax pour afficher un message d'erreur lorsque les formulaires ne sont pas correctement remplis.
+Au niveau du front nous avons mis en place l'inscription, la connexion, le sondage, la notation.
 Concernant la notation, après avoir donné une note il y a une popup qui s'affiche avec le nombre d'étoiles données.
 Nous avons aussi eu des difficultés pour lier le back et le front.
 De plus un membre du groupe (Anourah NDAO) avait des problèmes pour push ou commit
