@@ -1,12 +1,12 @@
 package com.apiGorgeousEvent;
 
-import Modele.User;
+import com.apiGorgeousEvent.Model.UserModel;
 
 import java.util.List;
 
 public interface UserRepository {
-    List<User> findByUser(String user);
-    List<User> findByToken(String token);
+    List<UserModel> findByUser(String user);
+    List<UserModel> findByToken(String token);
 
-    void save(User user);
+    void save(UserModel user);
 }
