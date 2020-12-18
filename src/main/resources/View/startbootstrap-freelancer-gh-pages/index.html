@@ -15,6 +15,8 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- Connection JS -->
+        <script src="js/NotationOfficielle.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -62,7 +64,7 @@
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star gold"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- About Section Content-->
@@ -70,28 +72,16 @@
                     <p class="lead">Laissez une note à  GORGEOUS EVENT en sélectionnant le nombre d'étoiles!</p></div>
                 </div>
 
-                <!-- NOTES ETOILES A METTRE EN JS -->
-                <div class="text-center" >
-                    <head>
+            <div class="rating">
+                <div id="etoiles" type="button" class="stars">
+                    <i id="choix1" type="button" class="fa fa-star"></i>
+                    <i id="choix2" type="button" class="fa fa-star"></i>
+                    <i id="choix3" type="button" class="fa fa-star"></i>
+                    <i id="choix4" type="button" class="fa fa-star"></i>
+                    <i id="choix5" type="button" class="fa fa-star"></i>
+                </div>
 
-                    </head>
-
-                    <body id="choix">
-                    <!--
-                    Vous pouvez mettre un nombre quelconque d'étoiles, veillez juste à mettre à jour la variable NbStar.
-                    Par défaut, les étoiles sont "éteintes" : si un utilisateur a désectivé JS il ne pourra pas voter mais le script ne plantera pas
-                    -->
-                    <img id="Star1" src="StarOut.png" height="100" width="100"/>
-                    <img id="Star2" src="StarOut.png" height="100" width="100" />
-                    <img id="Star3" src="StarOut.png" height="100" width="100"/>
-                    <img id="Star4" src="StarOut.png"  height="100" width="100"/>
-                    <img id="Star5" src="StarOut.png" height="100" width="100"/>
-                    </body>
-
-
-                    <!--FIN NOTES ETOILES -->
-
-
+            </div>
 
 
                 </div>
