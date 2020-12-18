@@ -72,16 +72,17 @@
                     <p class="lead">Laissez une note à  GORGEOUS EVENT en sélectionnant le nombre d'étoiles!</p></div>
                 </div>
 
-            <div class="rating">
-                <div id="etoiles" type="button" class="stars">
-                    <i id="choix1" type="button" class="fa fa-star"></i>
-                    <i id="choix2" type="button" class="fa fa-star"></i>
-                    <i id="choix3" type="button" class="fa fa-star"></i>
-                    <i id="choix4" type="button" class="fa fa-star"></i>
-                    <i id="choix5" type="button" class="fa fa-star"></i>
-                </div>
-
-            </div>
+            <body onload="NotationSystem();">
+            <!--
+            Vous pouvez mettre un nombre quelconque d'étoiles, veillez juste à mettre à jour la variable NbStar.
+            Par défaut, les étoiles sont "éteintes" : si un utilisateur a désectivé JS il ne pourra pas voter mais le script ne plantera pas
+            -->
+            <img id="Etoile1" src="StarOut.png" height="50" width="50"/>
+            <img id="Etoile2" src="StarOut.png" height="50" width="50" />
+            <img id="Etoile3" src="StarOut.png" height="50" width="50"/>
+            <img id="Etoile4" src="StarOut.png"  height="50" width="50"/>
+            <img id="Etoile5" src="StarOut.png" height="50" width="50"/>
+            </body>
 
 
                 </div>

@@ -11,6 +11,8 @@ var signup=function(){
     $.ajax({
         url:"http://localhost:8080/inscription",
         type:"POST",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
         data:{userName:userN, password:passwrd, email:eMail,confirmPassword:confirmPasswrd},
         success:function(resultat){
             location.href="index.html"

@@ -15,6 +15,8 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- Connection JS -->
+        <script src="js/NotationOfficielle.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -58,20 +60,37 @@
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
                 <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-white">Notez Gorgeous Events !</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star gold"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ml-auto"><p class="lead">Soyez au top pour vos évenements avec gorgeous event!</p></div>
-                    <div class="col-lg-4 mr-auto"><p class="lead">Coiffures, tenues, maquillage pour tout type d'évènement !</p></div>
+                <div class="text-center">
+                    <p class="lead">Laissez une note à  GORGEOUS EVENT en sélectionnant le nombre d'étoiles!</p></div>
+                </div>
+
+            <body onload="NotationSystem();">
+            <!--
+            Vous pouvez mettre un nombre quelconque d'étoiles, veillez juste à mettre à jour la variable NbStar.
+            Par défaut, les étoiles sont "éteintes" : si un utilisateur a désectivé JS il ne pourra pas voter mais le script ne plantera pas
+            -->
+            <img id="Etoile1" src="StarOut.png" height="50" width="50"/>
+            <img id="Etoile2" src="StarOut.png" height="50" width="50" />
+            <img id="Etoile3" src="StarOut.png" height="50" width="50"/>
+            <img id="Etoile4" src="StarOut.png"  height="50" width="50"/>
+            <img id="Etoile5" src="StarOut.png" height="50" width="50"/>
+            </body>
+
+
                 </div>
             </div>
         </section>
+
+
+
         <!-- Sondage Section -->
         <section class="page-section" id="contact">
             <div class="container">
@@ -88,45 +107,46 @@
                     <div class="col-lg-8 mx-auto">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
                         <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                            <label>Vous souhaitez plus d'infos ? prenez rendez-vous : </label>
+                            <label>Petit sondage (anonyme)...</label>
+                            <h1>Nous souhaiterions savoir à quel types d'évènements nos clientes aspirent ! </h1>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Nom</label>
-                                    <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name." />
+                                    <p>Pour quel type d'évènement feriez vous appel à une agence ? </p>
+                                    <input class="form-control" id="question1" type="text" placeholder="" required="required" data-validation-required-message="PPour quel type d'évènement feriez vous appel à une agence ?" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Adresse Mail</label>
-                                    <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address." />
+                                    <p>Quelles sont les qualitées principales que admirez dans un service de prestation ?  </p>
+                                    <input class="form-control" id="question2" type="email" placeholder="" required="required" data-validation-required-message="Please enter your email address." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Phone Number</label>
-                                    <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number." />
+                                    <p>Qu'est ce que vous attendez d'un service de prestions évènementiel ? </p>
+                                    <input class="form-control" id="question3" type="tel" placeholder="" required="required" data-validation-required-message="Qu'est ce que vous attendez d'un service de prestions évènementiel ?" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Message</label>
-                                    <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
+                                    <p>Quel conseil donneriez vous à GORGEOUS EVENT pour satisfaire sa clientèle ? </p>
+                                    <textarea class="form-control" id="question4" rows="5" placeholder="" required="required" data-validation-required-message="Quel conseil donneriez vous à GORGEOUS EVENT pour satisfaire sa clientèle ? "></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Calendrier</label>
-                                    <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
+                                    <p>Calendrier</p>
+                                    <textarea class="form-control" id="message" rows="5" placeholder="" required="required" data-validation-required-message="Please enter a message."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <br />
                             <div id="success"></div>
-                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button></div>
+                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Envoyer</button></div>
                         </form>
                     </div>
                 </div>

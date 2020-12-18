@@ -8,13 +8,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 // communication distante client serveur
-@CrossOrigin(origins = "http://localhost:8080", maxAge = 3600)
+@CrossOrigin
 @RestController
 @RequestMapping("/")
+
 public class UserController {
 
     @Autowired
     private UserService userService;
+
 
     @PostMapping(value="inscription")
     public Map<String,Object> getInscription(@RequestBody Map<String,Object> request) {

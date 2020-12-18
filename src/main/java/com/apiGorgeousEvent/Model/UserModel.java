@@ -61,9 +61,10 @@ public class UserModel implements Serializable {
         this.id = id;
     }
 
-    public String getLogin() {
+    public String getUsername() {
         return login;
     }
+
     public void setLogin(String login) {
         this.login = login;
     }
